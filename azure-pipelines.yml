@@ -38,10 +38,10 @@ stages:
         tags: |
           $(tag)
 
-          - task: CopyFiles@2
-            inputs:
-              Contents: 'deploy2k8s.yaml'
-              TargetFolder: '$(Build.ArtifactStagingDirectory)'
+- task: CopyFiles@2
+  inputs:
+    Contents: 'deploy2k8s.yaml'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
